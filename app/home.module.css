@@ -1,0 +1,14 @@
+.homeScreen {
+  background-size: cover;
+  background-position: center;
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
+@media (min-width: 600px) {
+  .homeScreen {
+    background: url("/images/bg.png");
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}

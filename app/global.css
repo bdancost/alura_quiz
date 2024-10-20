@@ -1,0 +1,31 @@
+/* CSS Theme*/
+:root {
+  --primary: #3f51b5;
+  --bg: #171b35;
+  --text: #ffffff;
+}
+
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
