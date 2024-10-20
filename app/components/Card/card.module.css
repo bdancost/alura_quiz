@@ -1,12 +1,7 @@
 .card {
   border: 1px solid var(--primary);
   background-color: var(--bg);
-}
-
-@media (min-width: 600px) {
-  .card {
-    max-width: 350px;
-  }
+  border-radius: 4px;
 }
 
 .cardHeader {
@@ -16,4 +11,12 @@
 
 .cardHeaderTitle {
   font-size: 16px;
+}
+
+.cardBody {
+  padding: 24px 34px;
+}
+
+.cardBody > p {
+  font-size: 14px;
 }
