@@ -1,12 +1,12 @@
-import { AluraQuizLogo } from "./components/AluraquizLogo/index";
-import { Footer } from "./components/Footer";
-import { Card } from "./components/Card";
-import homeStyles from "./home.module.css";
+import { AluraQuizLogo } from "./_components/AluraquizLogo/index";
+import { Footer } from "./_components/Footer";
+import { Card } from "./_components/Card";
+import pageStyles from "./page.module.css";
 
 export default function Page() {
   return (
-    <main className={homeStyles.homeScreen} style={{ flex: 1 }}>
-      <section className={homeStyles.container}>
+    <main className={pageStyles.screen} style={{ flex: 1 }}>
+      <section className={pageStyles.container}>
         <div
           style={{
             display: "flex",
@@ -17,7 +17,13 @@ export default function Page() {
           <AluraQuizLogo />
         </div>
 
-        <Card />
+        <Card headerTitle="Teste suas habilidades">
+          <p style={{ marginBottom: "32px" }}>
+            Teste os seus conhecimentos sobre o universo Marvel e divirta-se
+            criando o seu AluraQuiz!
+          </p>
+          <a href="/game">Jogar</a>
+        </Card>
         <Footer />
       </section>
     </main>
