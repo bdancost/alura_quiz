@@ -2,6 +2,7 @@ import { AluraQuizLogo } from "./_components/AluraquizLogo/index";
 import { Footer } from "./_components/Footer";
 import { Card } from "./_components/Card";
 import pageStyles from "./page.module.css";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -22,7 +23,7 @@ export default function Page() {
             Teste os seus conhecimentos sobre o universo Marvel e divirta-se
             criando o seu AluraQuiz!
           </p>
-          <a href="/game">Jogar</a>
+          <Link href="/game">Jogar</Link>
         </Card>
         <Footer />
       </section>
