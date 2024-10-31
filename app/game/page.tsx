@@ -21,8 +21,11 @@ export default function GameScreen() {
     keyof typeof answerStates
   >(answerStates.DEFAULT);
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
+  const [userAnswer, setUserAnswer] = React.useState([]);
   const questionNumber = currentQuestion + 1;
   const question = questions[currentQuestion];
+  const isLastQuestion = questionNumber === questions.length;
+
   return (
     <main
       className={pageStyles.screen}
@@ -52,13 +55,28 @@ export default function GameScreen() {
               const { alternative } = Object.fromEntries(formData.entries());
               const isCorrectAnswer = alternative === question.answer;
               if (isCorrectAnswer) {
+                setUserAnswer([...userAnswer, true]);
                 setAnswerState(answerStates.SUCCESS);
               }
               if (!isCorrectAnswer) {
+                setUserAnswer([...userAnswer, false]);
                 setAnswerState(answerStates.ERROR);
               }
               setTimeout(() => {
+                if (isLastQuestion) {
+                  const totalPoints = userAnswer.reduce(
+                    (_totalPoints, currentAnswer) => {
+                      if (currentAnswer === true) return _totalPoints + 1;
+
+                      return _totalPoints;
+                    },
+                    0
+                  );
+                  alert(`Você concluiu o desafio! e acertou ${totalPoints}`);
+                  return;
+                }
                 setCurrentQuestion(currentQuestion + 1);
+                setAnswerState(answerStates.DEFAULT);
               }, 2 * 1000);
             }}
           >
